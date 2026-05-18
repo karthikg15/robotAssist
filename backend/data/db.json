@@ -124,23 +124,23 @@
         "roomNumber": "ICU-12"
       },
       "vitals": {
-        "heartRate": 111,
-        "temperature": 36.6,
+        "heartRate": 64,
+        "temperature": 35.4,
         "bloodPressure": {
           "systolic": 120,
           "diastolic": 80
         },
         "spo2": 80,
         "oxygenSaturation": 80,
-        "respirationRate": 10
+        "respirationRate": 16
       },
       "sensors": {
-        "irSensor": 73,
-        "ultrasonicSensor": 147
+        "irSensor": 54,
+        "ultrasonicSensor": 97
       },
       "emotion": {
-        "current": "Distressed",
-        "confidence": 72
+        "current": "Anxious",
+        "confidence": 94
       },
       "status": {
         "condition": "Critical",
@@ -153,7 +153,7 @@
       },
       "timestamps": {
         "createdAt": "2026-05-17T10:00:00Z",
-        "lastUpdated": "2026-05-18T20:07:03.633281Z"
+        "lastUpdated": "2026-05-18T20:40:14.713878Z"
       }
     },
     {
@@ -165,7 +165,7 @@
         "roomNumber": "Room-302"
       },
       "vitals": {
-        "heartRate": 108,
+        "heartRate": 110,
         "temperature": 36.6,
         "bloodPressure": {
           "systolic": 115,
@@ -176,12 +176,12 @@
         "respirationRate": 15
       },
       "sensors": {
-        "irSensor": 79,
-        "ultrasonicSensor": 159
+        "irSensor": 59,
+        "ultrasonicSensor": 50
       },
       "emotion": {
         "current": "Anxious",
-        "confidence": 95
+        "confidence": 91
       },
       "status": {
         "condition": "Critical",
@@ -194,7 +194,7 @@
       },
       "timestamps": {
         "createdAt": "2026-05-17T10:30:00Z",
-        "lastUpdated": "2026-05-18T20:07:03.643389Z"
+        "lastUpdated": "2026-05-18T20:40:14.725833Z"
       }
     },
     {
@@ -206,23 +206,23 @@
         "roomNumber": "ICU-08"
       },
       "vitals": {
-        "heartRate": 111,
-        "temperature": 39.1,
+        "heartRate": 68,
+        "temperature": 35.8,
         "bloodPressure": {
           "systolic": 145,
           "diastolic": 95
         },
-        "spo2": 81,
+        "spo2": 80,
         "oxygenSaturation": 80,
-        "respirationRate": 12
+        "respirationRate": 19
       },
       "sensors": {
-        "irSensor": 77,
-        "ultrasonicSensor": 123
+        "irSensor": 49,
+        "ultrasonicSensor": 69
       },
       "emotion": {
-        "current": "Anxious",
-        "confidence": 93
+        "current": "Distressed",
+        "confidence": 72
       },
       "status": {
         "condition": "Critical",
@@ -235,7 +235,7 @@
       },
       "timestamps": {
         "createdAt": "2026-05-17T11:00:00Z",
-        "lastUpdated": "2026-05-18T20:07:03.652744Z"
+        "lastUpdated": "2026-05-18T20:40:14.734971Z"
       }
     },
     {
@@ -246,23 +246,23 @@
         "roomNumber": "Room-105"
       },
       "vitals": {
-        "heartRate": 38,
-        "temperature": 37.5,
+        "heartRate": 53,
+        "temperature": 39.8,
         "bloodPressure": {
           "systolic": 120,
           "diastolic": 80
         },
-        "spo2": 82,
-        "oxygenSaturation": 82,
-        "respirationRate": 21
+        "spo2": 80,
+        "oxygenSaturation": 80,
+        "respirationRate": 13
       },
       "sensors": {
-        "irSensor": 26,
-        "ultrasonicSensor": 109
+        "irSensor": 35,
+        "ultrasonicSensor": 182
       },
       "emotion": {
         "current": "Distressed",
-        "confidence": 96
+        "confidence": 76
       },
       "status": {
         "condition": "Critical",
@@ -276,7 +276,7 @@
       "patientId": "P456",
       "timestamps": {
         "createdAt": "2026-05-18T20:04:24.082664Z",
-        "lastUpdated": "2026-05-18T20:07:03.661055Z"
+        "lastUpdated": "2026-05-18T20:40:14.743283Z"
       }
     }
   ],
@@ -284,37 +284,37 @@
     {
       "robotId": "R001",
       "name": "IRIS-01 Alpha",
-      "roomNumber": "Room-302",
+      "roomNumber": "Dock-Station-A",
       "patientId": "P102",
       "status": "Scanning",
-      "battery": 42,
+      "battery": 97,
       "coordinates": {
-        "x": 64.9,
-        "y": 33.1
+        "x": 80.0,
+        "y": 19.0
       }
     },
     {
       "robotId": "R002",
       "name": "IRIS-02 Beta",
-      "roomNumber": "ICU-12",
+      "roomNumber": "Dock-Station-A",
       "patientId": "P101",
       "status": "Online",
-      "battery": 18,
+      "battery": 72,
       "coordinates": {
-        "x": 22.8,
-        "y": 65.7
+        "x": 90.1,
+        "y": 9.8
       }
     },
     {
       "robotId": "R003",
       "name": "IRIS-03 Gamma",
-      "roomNumber": "ICU-08",
+      "roomNumber": "Dock-Station-A",
       "patientId": "P103",
       "status": "Online",
-      "battery": 51,
+      "battery": 91,
       "coordinates": {
-        "x": 89.6,
-        "y": 10.7
+        "x": 75.8,
+        "y": 14.1
       }
     }
   ],

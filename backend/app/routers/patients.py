@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException, status
 from typing import List
 from app.database import db
 from app.models import Patient, PatientCreate, PatientUpdate
+from app.services.simulator import manager
 
 router = APIRouter(prefix="/patients", tags=["Patients"])
 
@@ -120,3 +121,66 @@ async def delete_patient(patient_id: str):
 
     db.delete_patient(patient_id)
     return None
+
+@router.post("/telemetry", status_code=status.HTTP_200_OK, summary="Ingest telemetry from AWS IoT Core")
+async def update_patient_telemetry(payload: dict):
+    """
+    Ingests sensor data (vitals and sensors) from AWS IoT Core Rule Action.
+    Updates the local db.json thread-safely and broadcasts live updates to all connected web clients.
+    """
+    patient_id = payload.get("patientId")
+    if not patient_id:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Payload must include a valid 'patientId'"
+        )
+
+    existing = db.get_patient(patient_id)
+    if not existing:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Patient with ID '{patient_id}' not found in registry"
+        )
+
+    # Prepare update fields
+    update_data = {}
+    
+    # 1. Update vitals if present in payload
+    if "vitals" in payload:
+        vitals_payload = payload["vitals"]
+        current_vitals = existing.get("vitals", {})
+        updated_vitals = {**current_vitals, **vitals_payload}
+        
+        # Handle bloodPressure nesting specifically
+        if "bloodPressure" in vitals_payload:
+            current_bp = current_vitals.get("bloodPressure", {})
+            updated_bp = {**current_bp, **vitals_payload["bloodPressure"]}
+            updated_vitals["bloodPressure"] = updated_bp
+            
+        update_data["vitals"] = updated_vitals
+
+    # 2. Update sensors if present in payload
+    if "sensors" in payload:
+        sensors_payload = payload["sensors"]
+        current_sensors = existing.get("sensors", {})
+        updated_sensors = {**current_sensors, **sensors_payload}
+        update_data["sensors"] = updated_sensors
+
+    # If nothing to update, return early
+    if not update_data:
+        return existing
+
+    # Update patient record in database
+    updated_patient = db.update_patient(patient_id, update_data)
+
+    # Broadcast updated patients list, robots, and alerts instantly over standard WebSockets!
+    await manager.broadcast({
+        "type": "TELEMETRY_UPDATE",
+        "data": {
+            "patients": db.get_patients(),
+            "robots": db.get_robots(),
+            "alerts": db.get_alerts()
+        }
+    })
+
+    return updated_patient
