@@ -27,6 +27,8 @@ class DoctorBase(BaseModel):
     professionalInfo: DoctorProfessionalInfo
     status: DoctorStatus
     assignedPatients: List[str] = []
+    username: Optional[str] = None
+    password: Optional[str] = None
 
 class DoctorCreate(DoctorBase):
     doctorId: str
@@ -36,6 +38,8 @@ class DoctorUpdate(BaseModel):
     professionalInfo: Optional[DoctorProfessionalInfo] = None
     status: Optional[DoctorStatus] = None
     assignedPatients: Optional[List[str]] = None
+    username: Optional[str] = None
+    password: Optional[str] = None
 
 class Doctor(DoctorBase):
     doctorId: str
@@ -55,6 +59,8 @@ class NurseBase(BaseModel):
     personalInfo: NursePersonalInfo
     status: NurseStatus
     assignedPatients: List[str] = []
+    username: Optional[str] = None
+    password: Optional[str] = None
 
 class NurseCreate(NurseBase):
     nurseId: str
@@ -63,6 +69,8 @@ class NurseUpdate(BaseModel):
     personalInfo: Optional[NursePersonalInfo] = None
     status: Optional[NurseStatus] = None
     assignedPatients: Optional[List[str]] = None
+    username: Optional[str] = None
+    password: Optional[str] = None
 
 class Nurse(NurseBase):
     nurseId: str

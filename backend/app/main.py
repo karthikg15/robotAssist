@@ -38,12 +38,76 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+from pydantic import BaseModel
+from fastapi.responses import JSONResponse
+
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+
 # Include CRUD API Routers under /api
 app.include_router(doctors.router, prefix="/api")
 app.include_router(nurses.router, prefix="/api")
 app.include_router(patients.router, prefix="/api")
 app.include_router(robots.router, prefix="/api")
 app.include_router(alerts.router, prefix="/api")
+
+@app.post("/api/login", tags=["Authentication"])
+async def login(req: LoginRequest):
+    """Secure login endpoint for medical professionals (admin, doctor, nurse) to access the telemetry dashboard."""
+    username = req.username.strip().lower()
+    password = req.password
+
+    # 1. System Admin check
+    if username == "admin" and password == "admin123":
+        return {
+            "id": "admin",
+            "name": "System Administrator",
+            "role": "admin",
+            "username": "admin"
+        }
+
+    # 2. Doctor check
+    doctors_list = db.get_doctors()
+    for doc in doctors_list:
+        db_username = doc.get("username", "").strip().lower()
+        if not db_username:
+            # Fallback for mock/sample doctors to match their last name (e.g. Elena Rostova -> rostova)
+            db_username = doc.get("personalInfo", {}).get("name", "").split()[-1].lower()
+        
+        db_password = doc.get("password", "password123")
+        
+        if db_username == username and db_password == password:
+            return {
+                "id": doc["doctorId"],
+                "name": doc["personalInfo"]["name"],
+                "role": "doctor",
+                "username": db_username
+            }
+
+    # 3. Nurse check
+    nurses_list = db.get_nurses()
+    for nurse in nurses_list:
+        db_username = nurse.get("username", "").strip().lower()
+        if not db_username:
+            # Fallback for mock/sample nurses to match their first name (e.g. Alice Johnson -> alice)
+            db_username = nurse.get("personalInfo", {}).get("name", "").split()[0].lower()
+            
+        db_password = nurse.get("password", "password123")
+        
+        if db_username == username and db_password == password:
+            return {
+                "id": nurse["nurseId"],
+                "name": nurse["personalInfo"]["name"],
+                "role": "nurse",
+                "username": db_username
+            }
+
+    return JSONResponse(
+        status_code=status.HTTP_400_BAD_REQUEST,
+        content={"error": "Invalid username or password"}
+    )
+
 
 @app.get("/", tags=["General"])
 async def root():

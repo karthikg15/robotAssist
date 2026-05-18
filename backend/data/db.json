@@ -39,6 +39,27 @@
       "timestamps": {
         "createdAt": "2026-05-18T17:19:48.138817Z"
       }
+    },
+    {
+      "personalInfo": {
+        "name": "Dr. Aravind",
+        "age": 25,
+        "gender": "Male"
+      },
+      "professionalInfo": {
+        "field": "Cardiology",
+        "experienceYears": 3
+      },
+      "status": {
+        "availability": "On Duty"
+      },
+      "assignedPatients": [],
+      "username": "aravind",
+      "password": "password123",
+      "doctorId": "D187",
+      "timestamps": {
+        "createdAt": "2026-05-18T20:06:11.384715Z"
+      }
     }
   ],
   "nurses": [
@@ -103,23 +124,23 @@
         "roomNumber": "ICU-12"
       },
       "vitals": {
-        "heartRate": 83,
-        "temperature": 36.8,
+        "heartRate": 111,
+        "temperature": 36.6,
         "bloodPressure": {
           "systolic": 120,
           "diastolic": 80
         },
         "spo2": 80,
         "oxygenSaturation": 80,
-        "respirationRate": 14
+        "respirationRate": 10
       },
       "sensors": {
-        "irSensor": 74,
-        "ultrasonicSensor": 126
+        "irSensor": 73,
+        "ultrasonicSensor": 147
       },
       "emotion": {
-        "current": "Anxious",
-        "confidence": 82
+        "current": "Distressed",
+        "confidence": 72
       },
       "status": {
         "condition": "Critical",
@@ -132,7 +153,7 @@
       },
       "timestamps": {
         "createdAt": "2026-05-17T10:00:00Z",
-        "lastUpdated": "2026-05-18T17:22:07.232387Z"
+        "lastUpdated": "2026-05-18T20:07:03.633281Z"
       }
     },
     {
@@ -144,7 +165,7 @@
         "roomNumber": "Room-302"
       },
       "vitals": {
-        "heartRate": 110,
+        "heartRate": 108,
         "temperature": 36.6,
         "bloodPressure": {
           "systolic": 115,
@@ -155,12 +176,12 @@
         "respirationRate": 15
       },
       "sensors": {
-        "irSensor": 39,
-        "ultrasonicSensor": 140
+        "irSensor": 79,
+        "ultrasonicSensor": 159
       },
       "emotion": {
         "current": "Anxious",
-        "confidence": 74
+        "confidence": 95
       },
       "status": {
         "condition": "Critical",
@@ -173,7 +194,7 @@
       },
       "timestamps": {
         "createdAt": "2026-05-17T10:30:00Z",
-        "lastUpdated": "2026-05-18T17:22:07.248675Z"
+        "lastUpdated": "2026-05-18T20:07:03.643389Z"
       }
     },
     {
@@ -185,23 +206,23 @@
         "roomNumber": "ICU-08"
       },
       "vitals": {
-        "heartRate": 128,
-        "temperature": 40.7,
+        "heartRate": 111,
+        "temperature": 39.1,
         "bloodPressure": {
           "systolic": 145,
           "diastolic": 95
         },
-        "spo2": 82,
-        "oxygenSaturation": 82,
-        "respirationRate": 28
+        "spo2": 81,
+        "oxygenSaturation": 80,
+        "respirationRate": 12
       },
       "sensors": {
-        "irSensor": 50,
-        "ultrasonicSensor": 76
+        "irSensor": 77,
+        "ultrasonicSensor": 123
       },
       "emotion": {
         "current": "Anxious",
-        "confidence": 94
+        "confidence": 93
       },
       "status": {
         "condition": "Critical",
@@ -214,7 +235,48 @@
       },
       "timestamps": {
         "createdAt": "2026-05-17T11:00:00Z",
-        "lastUpdated": "2026-05-18T17:22:07.258055Z"
+        "lastUpdated": "2026-05-18T20:07:03.652744Z"
+      }
+    },
+    {
+      "personalInfo": {
+        "name": "Local Test Patient",
+        "age": 44,
+        "gender": "Male",
+        "roomNumber": "Room-105"
+      },
+      "vitals": {
+        "heartRate": 38,
+        "temperature": 37.5,
+        "bloodPressure": {
+          "systolic": 120,
+          "diastolic": 80
+        },
+        "spo2": 82,
+        "oxygenSaturation": 82,
+        "respirationRate": 21
+      },
+      "sensors": {
+        "irSensor": 26,
+        "ultrasonicSensor": 109
+      },
+      "emotion": {
+        "current": "Distressed",
+        "confidence": 96
+      },
+      "status": {
+        "condition": "Critical",
+        "emergency": true,
+        "fallDetected": false
+      },
+      "assignedStaff": {
+        "doctorId": "",
+        "nurseId": ""
+      },
+      "patientId": "P456",
+      "timestamps": {
+        "createdAt": "2026-05-18T20:04:24.082664Z",
+        "lastUpdated": "2026-05-18T20:07:03.661055Z"
       }
     }
   ],
@@ -224,11 +286,11 @@
       "name": "IRIS-01 Alpha",
       "roomNumber": "Room-302",
       "patientId": "P102",
-      "status": "Online",
-      "battery": 70,
+      "status": "Scanning",
+      "battery": 42,
       "coordinates": {
-        "x": 51.9,
-        "y": 50.8
+        "x": 64.9,
+        "y": 33.1
       }
     },
     {
@@ -236,11 +298,11 @@
       "name": "IRIS-02 Beta",
       "roomNumber": "ICU-12",
       "patientId": "P101",
-      "status": "Scanning",
-      "battery": 49,
+      "status": "Online",
+      "battery": 18,
       "coordinates": {
-        "x": 33.0,
-        "y": 76.4
+        "x": 22.8,
+        "y": 65.7
       }
     },
     {
@@ -248,11 +310,11 @@
       "name": "IRIS-03 Gamma",
       "roomNumber": "ICU-08",
       "patientId": "P103",
-      "status": "Scanning",
-      "battery": 86,
+      "status": "Online",
+      "battery": 51,
       "coordinates": {
-        "x": 66.8,
-        "y": 15.3
+        "x": 89.6,
+        "y": 10.7
       }
     }
   ],
@@ -300,6 +362,21 @@
       "resolved": false,
       "alertId": "A503",
       "timestamp": "2026-05-18T17:20:16.345593Z"
+    },
+    {
+      "patientId": "P456",
+      "patientName": "Local Test Patient",
+      "type": "Bradycardia",
+      "severity": "High",
+      "vitals": {
+        "heartRate": 42,
+        "temperature": 36.8,
+        "spo2": 94,
+        "respirationRate": 15
+      },
+      "resolved": false,
+      "alertId": "A504",
+      "timestamp": "2026-05-18T20:06:20.506488Z"
     }
   ]
 }
