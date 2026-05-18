@@ -1,0 +1,1 @@
+this is an web app to monitor patient using a medical robot which will monitor the patients vitals such as heartbeat , body temp , respiration rate and spo2.

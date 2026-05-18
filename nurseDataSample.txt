@@ -1,0 +1,22 @@
+{
+  "nurseId": "N301",
+
+  "personalInfo": {
+    "name": "Alice Johnson",
+    "age": 31,
+    "gender": "Female"
+  },
+
+  "status": {
+    "availability": "On Duty"
+  },
+
+  "assignedPatients": [
+    "P101",
+    "P103"
+  ],
+
+  "timestamps": {
+    "createdAt": "2026-05-17T09:00:00Z"
+  }
+}

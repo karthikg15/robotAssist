@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+:root {
+  /* Color Palette - Premium Futuristic Cyber-Medical Theme */
+  --bg-primary: #0a0b10;
+  --bg-secondary: #12141f;
+  --bg-tertiary: #191c2c;
+  --bg-card: rgba(20, 22, 37, 0.7);
+  --bg-card-hover: rgba(27, 30, 52, 0.85);
+  
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.18);
+  
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  
+  --accent-cyan: #06b6d4;
+  --accent-cyan-glow: rgba(6, 182, 212, 0.2);
+  
+  --status-stable: #10b981;
+  --status-stable-glow: rgba(16, 185, 129, 0.15);
+  
+  --status-critical: #ef4444;
+  --status-critical-glow: rgba(239, 68, 68, 0.35);
+  
+  --status-warning: #f59e0b;
+  --status-warning-glow: rgba(245, 158, 11, 0.25);
+  
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  
+  --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 20px rgba(6, 182, 212, 0.15);
+  
+  font-family: var(--font-body);
+  color-scheme: dark;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  overflow-x: hidden;
+  background: radial-gradient(circle at 50% 0%, #151a30 0%, #0a0b10 70%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+
+/* Base structural layout */
+#root {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Animations */
+@keyframes pulse-heart {
+  0% { transform: scale(1); filter: drop-shadow(0 0 2px var(--status-stable)); }
+  30% { transform: scale(1.2); filter: drop-shadow(0 0 6px var(--status-stable)); }
+  60% { transform: scale(1); filter: drop-shadow(0 0 2px var(--status-stable)); }
+}
+
+@keyframes pulse-heart-critical {
+  0% { transform: scale(1); filter: drop-shadow(0 0 4px var(--status-critical)); }
+  25% { transform: scale(1.35); filter: drop-shadow(0 0 15px var(--status-critical)); }
+  50% { transform: scale(1); filter: drop-shadow(0 0 4px var(--status-critical)); }
+  75% { transform: scale(1.35); filter: drop-shadow(0 0 15px var(--status-critical)); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 4px var(--status-critical)); }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 5px rgba(6, 182, 212, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.5); }
+  100% { box-shadow: 0 0 5px rgba(6, 182, 212, 0.2); }
+}
+
+@keyframes flash-red {
+  0% { border-color: rgba(239, 68, 68, 0.3); background-color: rgba(239, 68, 68, 0.05); }
+  50% { border-color: rgba(239, 68, 68, 0.8); background-color: rgba(239, 68, 68, 0.15); }
+  100% { border-color: rgba(239, 68, 68, 0.3); background-color: rgba(239, 68, 68, 0.05); }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow-premium);
+}
+
+.glass-panel:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+
+/* Interactive elements styles */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+/* Form Styles */
+input, select, textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(10, 11, 16, 0.8);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 15px;
+  margin-top: 6px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+  outline: none;
+}
+
+label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

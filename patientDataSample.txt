@@ -1,0 +1,47 @@
+{
+  "patientId": "P101",
+
+  "personalInfo": {
+    "name": "John Doe",
+    "age": 67,
+    "gender": "Male",
+    "roomNumber": "ICU-12"
+  },
+
+  "vitals": {
+    "heartRate": 82,
+    "temperature": 36.8,
+    "bloodPressure": {
+      "systolic": 120,
+      "diastolic": 80
+    },
+    "spo2": 98,
+    "oxygenSaturation": 97
+  },
+
+  "sensors": {
+    "irSensor": 45,
+    "ultrasonicSensor": 120
+  },
+
+  "emotion": {
+    "current": "Calm",
+    "confidence": 91
+  },
+
+  "status": {
+    "condition": "Stable",
+    "emergency": false,
+    "fallDetected": false
+  },
+
+  "assignedStaff": {
+    "doctorId": "D201",
+    "nurseId": "N301"
+  },
+
+  "timestamps": {
+    "createdAt": "2026-05-17T10:00:00Z",
+    "lastUpdated": "2026-05-17T10:15:00Z"
+  }
+}

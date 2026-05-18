@@ -1,0 +1,305 @@
+{
+  "doctors": [
+    {
+      "doctorId": "D202",
+      "personalInfo": {
+        "name": "Dr. Elena Rostova",
+        "age": 39,
+        "gender": "Female"
+      },
+      "professionalInfo": {
+        "field": "Neurology",
+        "experienceYears": 9
+      },
+      "status": {
+        "availability": "On Duty"
+      },
+      "assignedPatients": [
+        "P103"
+      ],
+      "timestamps": {
+        "createdAt": "2026-05-17T09:30:00Z"
+      }
+    },
+    {
+      "personalInfo": {
+        "name": "Dr. Karthik",
+        "age": 21,
+        "gender": "Male"
+      },
+      "professionalInfo": {
+        "field": "Neurology",
+        "experienceYears": 2
+      },
+      "status": {
+        "availability": "On Duty"
+      },
+      "assignedPatients": [],
+      "doctorId": "D212",
+      "timestamps": {
+        "createdAt": "2026-05-18T17:19:48.138817Z"
+      }
+    }
+  ],
+  "nurses": [
+    {
+      "nurseId": "N301",
+      "personalInfo": {
+        "name": "Alice Johnson",
+        "age": 31,
+        "gender": "Female"
+      },
+      "status": {
+        "availability": "On Duty"
+      },
+      "assignedPatients": [
+        "P101",
+        "P103"
+      ],
+      "timestamps": {
+        "createdAt": "2026-05-17T09:00:00Z"
+      }
+    },
+    {
+      "nurseId": "N302",
+      "personalInfo": {
+        "name": "Robert Chen",
+        "age": 28,
+        "gender": "Male"
+      },
+      "status": {
+        "availability": "On Duty"
+      },
+      "assignedPatients": [
+        "P102"
+      ],
+      "timestamps": {
+        "createdAt": "2026-05-17T09:15:00Z"
+      }
+    },
+    {
+      "nurseId": "N303",
+      "personalInfo": {
+        "name": "Sarah Connor",
+        "age": 35,
+        "gender": "Female"
+      },
+      "status": {
+        "availability": "Off Duty"
+      },
+      "assignedPatients": [],
+      "timestamps": {
+        "createdAt": "2026-05-17T09:20:00Z"
+      }
+    }
+  ],
+  "patients": [
+    {
+      "patientId": "P101",
+      "personalInfo": {
+        "name": "John Doe",
+        "age": 67,
+        "gender": "Male",
+        "roomNumber": "ICU-12"
+      },
+      "vitals": {
+        "heartRate": 83,
+        "temperature": 36.8,
+        "bloodPressure": {
+          "systolic": 120,
+          "diastolic": 80
+        },
+        "spo2": 80,
+        "oxygenSaturation": 80,
+        "respirationRate": 14
+      },
+      "sensors": {
+        "irSensor": 74,
+        "ultrasonicSensor": 126
+      },
+      "emotion": {
+        "current": "Anxious",
+        "confidence": 82
+      },
+      "status": {
+        "condition": "Critical",
+        "emergency": true,
+        "fallDetected": false
+      },
+      "assignedStaff": {
+        "doctorId": "D201",
+        "nurseId": "N301"
+      },
+      "timestamps": {
+        "createdAt": "2026-05-17T10:00:00Z",
+        "lastUpdated": "2026-05-18T17:22:07.232387Z"
+      }
+    },
+    {
+      "patientId": "P102",
+      "personalInfo": {
+        "name": "Emma Watson",
+        "age": 34,
+        "gender": "Female",
+        "roomNumber": "Room-302"
+      },
+      "vitals": {
+        "heartRate": 110,
+        "temperature": 36.6,
+        "bloodPressure": {
+          "systolic": 115,
+          "diastolic": 75
+        },
+        "spo2": 98,
+        "oxygenSaturation": 97,
+        "respirationRate": 15
+      },
+      "sensors": {
+        "irSensor": 39,
+        "ultrasonicSensor": 140
+      },
+      "emotion": {
+        "current": "Anxious",
+        "confidence": 74
+      },
+      "status": {
+        "condition": "Critical",
+        "emergency": true,
+        "fallDetected": true
+      },
+      "assignedStaff": {
+        "doctorId": "D201",
+        "nurseId": "N302"
+      },
+      "timestamps": {
+        "createdAt": "2026-05-17T10:30:00Z",
+        "lastUpdated": "2026-05-18T17:22:07.248675Z"
+      }
+    },
+    {
+      "patientId": "P103",
+      "personalInfo": {
+        "name": "Michael Jordan",
+        "age": 58,
+        "gender": "Male",
+        "roomNumber": "ICU-08"
+      },
+      "vitals": {
+        "heartRate": 128,
+        "temperature": 40.7,
+        "bloodPressure": {
+          "systolic": 145,
+          "diastolic": 95
+        },
+        "spo2": 82,
+        "oxygenSaturation": 82,
+        "respirationRate": 28
+      },
+      "sensors": {
+        "irSensor": 50,
+        "ultrasonicSensor": 76
+      },
+      "emotion": {
+        "current": "Anxious",
+        "confidence": 94
+      },
+      "status": {
+        "condition": "Critical",
+        "emergency": true,
+        "fallDetected": false
+      },
+      "assignedStaff": {
+        "doctorId": "D202",
+        "nurseId": "N301"
+      },
+      "timestamps": {
+        "createdAt": "2026-05-17T11:00:00Z",
+        "lastUpdated": "2026-05-18T17:22:07.258055Z"
+      }
+    }
+  ],
+  "robots": [
+    {
+      "robotId": "R001",
+      "name": "IRIS-01 Alpha",
+      "roomNumber": "Room-302",
+      "patientId": "P102",
+      "status": "Online",
+      "battery": 70,
+      "coordinates": {
+        "x": 51.9,
+        "y": 50.8
+      }
+    },
+    {
+      "robotId": "R002",
+      "name": "IRIS-02 Beta",
+      "roomNumber": "ICU-12",
+      "patientId": "P101",
+      "status": "Scanning",
+      "battery": 49,
+      "coordinates": {
+        "x": 33.0,
+        "y": 76.4
+      }
+    },
+    {
+      "robotId": "R003",
+      "name": "IRIS-03 Gamma",
+      "roomNumber": "ICU-08",
+      "patientId": "P103",
+      "status": "Scanning",
+      "battery": 86,
+      "coordinates": {
+        "x": 66.8,
+        "y": 15.3
+      }
+    }
+  ],
+  "alerts": [
+    {
+      "alertId": "A501",
+      "patientId": "P103",
+      "patientName": "Michael Jordan",
+      "type": "High Heart Rate & Fever",
+      "severity": "High",
+      "vitals": {
+        "heartRate": 115,
+        "temperature": 38.5,
+        "spo2": 92
+      },
+      "resolved": false,
+      "timestamp": "2026-05-18T17:00:00Z"
+    },
+    {
+      "patientId": "P102",
+      "patientName": "Emma Watson",
+      "type": "Patient Fall",
+      "severity": "Critical",
+      "vitals": {
+        "heartRate": 85,
+        "temperature": 36.6,
+        "spo2": 98,
+        "respirationRate": 15
+      },
+      "resolved": false,
+      "alertId": "A502",
+      "timestamp": "2026-05-18T17:12:34.279718Z"
+    },
+    {
+      "patientId": "P101",
+      "patientName": "John Doe",
+      "type": "Hypoxia",
+      "severity": "High",
+      "vitals": {
+        "heartRate": 79,
+        "temperature": 36.8,
+        "spo2": 86,
+        "respirationRate": 10
+      },
+      "resolved": false,
+      "alertId": "A503",
+      "timestamp": "2026-05-18T17:20:16.345593Z"
+    }
+  ]
+}

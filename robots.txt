@@ -1,0 +1,38 @@
+"robots": [
+    {
+      "robotId": "R001",
+      "name": "IRIS-01 Alpha",
+      "roomNumber": "302",
+      "patientId": "P001",
+      "status": "Online",
+      "battery": 95,
+      "coordinates": {
+        "x": 42.5,
+        "y": 58.2
+      }
+    },
+    {
+      "robotId": "R002",
+      "name": "IRIS-02 Beta",
+      "roomNumber": "308",
+      "patientId": "P011",
+      "status": "Scanning",
+      "battery": 78,
+      "coordinates": {
+        "x": 15,
+        "y": 72.4
+      }
+    },
+    {
+      "robotId": "R003",
+      "name": "IRIS-03 Gamma",
+      "roomNumber": "101C",
+      "patientId": "P010",
+      "status": "Docked",
+      "battery": 100,
+      "coordinates": {
+        "x": 80,
+        "y": 20
+      }
+    }
+  ]

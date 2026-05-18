@@ -1,0 +1,27 @@
+{
+  "doctorId": "D201",
+
+  "personalInfo": {
+    "name": "Dr. Smith",
+    "age": 45,
+    "gender": "Male"
+  },
+
+  "professionalInfo": {
+    "field": "Cardiology",
+    "experienceYears": 12
+  },
+
+  "status": {
+    "availability": "On Duty"
+  },
+
+  "assignedPatients": [
+    "P101",
+    "P102"
+  ],
+
+  "timestamps": {
+    "createdAt": "2026-05-17T09:00:00Z"
+  }
+}
