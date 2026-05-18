@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import './App.css'
 
-const API_BASE_URL = 'http://127.0.0.1:8000'
-const WS_BASE_URL = 'ws://127.0.0.1:8000/ws/telemetry'
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
+const WS_BASE_URL = import.meta.env.VITE_WS_URL || 'ws://127.0.0.1:8000/ws/telemetry'
 
 function App() {
   // Navigation & UI state
